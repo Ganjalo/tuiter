@@ -1,4 +1,9 @@
-<h1>Tuiter</h1>
-<p>This is the home page.</p>
-<p><%= "Ruby version: #{RUBY_VERSION}" %></p>
-<p><%= "Rails version: #{Rails.version}" %></p>
+<div class="center jumbotron">
+  <h1>Welcome to Tuiter</h1>
+
+  <h2>This is the home page.</h2>
+
+  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails logo"), 'http://rubyonrails.org/' %>
