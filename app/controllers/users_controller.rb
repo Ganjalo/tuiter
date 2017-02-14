@@ -13,6 +13,7 @@ class UsersController < ApplicationController
       flash[:info] = "This user doesn't exist."
       redirect_to root_url and return
     end
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new
