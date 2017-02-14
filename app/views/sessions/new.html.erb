@@ -21,5 +21,10 @@
     <% end %>
 
     <p>New user? <%= link_to "Sign up", signup_path %>.</p>
+
+    <p>... Or use a random account :<br/>
+      Email: <strong>example-<%= rand(0..99) %>@railstutorial.org</strong><br/>
+      Password: <strong>password</strong>
+    </p>
   </div>
 </div>
