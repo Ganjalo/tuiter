@@ -1,0 +1,15 @@
+one:
+  follower: tartempion
+  followed: lana
+
+two:
+  follower: tartempion
+  followed: malory
+
+three:
+  follower: lana
+  followed: tartempion
+
+four:
+  follower: archer
+  followed: tartempion
