@@ -13,3 +13,7 @@ three:
 four:
   follower: archer
   followed: tartempion
+
+five:
+  follower: admin
+  followed: tartempion

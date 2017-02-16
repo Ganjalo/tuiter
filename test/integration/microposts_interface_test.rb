@@ -4,6 +4,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
 
   def setup
     @user = users(:tartuffe)
+    @admin = users(:admin)
   end
 
   test "micropost interface" do
@@ -33,5 +34,16 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     # Visit a different user.
     get user_path(users(:archer))
     assert_select 'a', { text: 'Delete', count: 0 }
+  end
+
+  test "admins can see and delete all microposts" do
+    log_in_as(@admin)
+    get root_url
+    assert_select ".content"
+    assert_select "a[data-method=?]", "delete"
+    first_micropost = @user.feed.first
+    assert_difference 'Micropost.count', -1 do
+      delete micropost_path(first_micropost)
+    end
   end
 end
